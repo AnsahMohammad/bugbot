@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - "master"
+      - "test-wiki-check" # (for testing, to be removed later)
+  pull_request:
+    branches:
+      - "master"
       - "test-wiki-check"
 
 permissions:

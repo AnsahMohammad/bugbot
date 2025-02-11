@@ -62,7 +62,10 @@ class CheckWikiPage:
 
     def get_rules_on_wiki_page(self) -> set:
         """Get the list of rules on the wiki page."""
-        req = Request(self.wiki_page_url)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
+        }
+        req = Request(self.wiki_page_url, headers=headers)
         with urlopen(req) as resp:
             wiki_page_content = resp.read().decode("utf-8")
 
